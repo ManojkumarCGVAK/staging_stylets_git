@@ -1,0 +1,41 @@
+.important-notice {
+	background: #c50000;
+	position: absolute;
+	top: 62px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	padding: 1rem;
+	opacity: 0;
+	transition: all 300ms ease-in-out;
+	@include min-width(md) {
+		top: 72px;
+	}
+
+	&.show {
+		opacity: 1;
+	}
+
+	&.hiding {
+		opacity: 0;
+	}
+
+	&.hidden {
+		display: none;
+	}
+
+	button {
+		border-radius: 0;
+		font-size: 1rem !important;
+		font-weight: 400 !important;
+
+		&:focus,
+		&:active {
+			box-shadow: none !important;
+		}
+
+		&:first-child {
+			margin-right: 0.5rem;
+		}
+	}
+}

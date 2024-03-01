@@ -1,0 +1,35 @@
+.testimonials {
+	text-align: center;
+
+	.react-multi-carousel-track {
+		padding-bottom: 2rem;
+
+		li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+
+.testimonials {
+	.header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 15px;
+
+		.heading {
+			font-weight: $f-semi-bold;
+			font-size: 1.125rem;
+			flex-shrink: 0;
+			margin-bottom: 0;
+			margin-right: 10px;
+		}
+
+		hr {
+			border-top: 1px solid $secondary;
+			width: 100%;
+			margin: 0;
+		}
+	}
+}

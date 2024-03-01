@@ -1,0 +1,58 @@
+.date-picker {
+	padding-top: 8px;
+
+	.MuiFormControl-root {
+		.MuiInput-underline {
+			color: #fff;
+
+			&::before {
+				border-bottom: 2px solid #fff;
+			}
+
+			&::after {
+				border-bottom: 2px solid $secondary;
+			}
+
+			&:hover {
+				&:not(.Mui-disabled) {
+					&::before {
+						border-bottom: 2px solid rgb(156, 156, 156);
+					}
+				}
+			}
+		}
+	}
+}
+
+.MuiDialog-root,
+.MuiPickersBasePicker-container {
+	.MuiPickersToolbar-toolbar {
+		background-color: $secondary;
+	}
+
+	.MuiPickersDay-daySelected {
+		background-color: $secondary;
+
+		&:hover {
+			background-color: darken($secondary, 10%);
+		}
+	}
+
+	.MuiButton-textPrimary {
+		color: $secondary;
+	}
+
+	.MuiPickersDay-current {
+		color: lighten($secondary, 20%);
+	}
+
+	.MuiTypography-colorPrimary {
+		color: $secondary;
+	}
+
+	.MuiPickersYear-root {
+		&:focus {
+			color: $secondary;
+		}
+	}
+}

@@ -1,0 +1,125 @@
+.contact-page {
+	// hero
+	.hero {
+		text-align: center;
+
+		img {
+			height: auto !important;
+			width: 100% !important;
+			max-width: 955px;
+
+			@media (min-width: 992px) {
+				margin-top: -40px;
+			}
+		}
+	}
+
+	.main-content {
+		background-color: $light;
+		padding: 10% 0 50px;
+		margin-top: -6.5%;
+
+		@media (min-width: 992px) {
+			padding: 110px 0 50px;
+			margin-top: -80px;
+		}
+
+		.contact-form,
+		.enquiry-form,
+		.booking-form {
+			.field {
+				margin-bottom: 10px;
+
+				label {
+					display: block;
+					font-weight: $f-bold;
+					color: $primary;
+					font-size: 1.125rem;
+					margin-bottom: 5px;
+				}
+
+				input,
+				textarea,
+				select {
+					width: 100%;
+					border: 1px solid $secondary;
+					padding: 10px;
+
+					&:focus {
+						outline: none;
+						border-color: $primary;
+					}
+				}
+
+				.error {
+					color: red;
+					font-size: 0.875rem;
+					font-weight: $f-light;
+				}
+			}
+
+			.success {
+				margin-top: 30px;
+
+				.heading {
+					color: $secondary;
+					font-weight: $f-semi-bold;
+
+					p {
+						font-weight: $f-light;
+					}
+				}
+			}
+		}
+
+		.contact-info {
+			background-color: $primary;
+			text-align: center;
+			color: white;
+			margin-bottom: 30px;
+			padding: 25px;
+
+			@media (min-width: 768px) {
+				margin-top: 30px;
+				margin-bottom: 0;
+			}
+
+			.info-section {
+				position: relative;
+
+				&:not(:last-child) {
+					margin-bottom: 15px;
+				}
+
+				.heading {
+					margin-bottom: 0;
+					font-weight: $f-bold;
+					font-size: 1.125rem;
+				}
+
+				p,
+				a {
+					display: block;
+					width: 100%;
+					color: $secondary;
+					font-weight: $f-light;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
+
+	.map-wrapper {
+		width: 100%;
+
+		iframe {
+			height: 300px;
+			width: 100%;
+			display: block;
+			border: none;
+			border-top: 5px solid $secondary;
+		}
+	}
+}

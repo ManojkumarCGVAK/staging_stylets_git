@@ -1,0 +1,256 @@
+/* autoprefixer grid: true */
+
+// import image carousel styles
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import "react-credit-cards/lib/styles.scss";
+
+// import base
+@import "base/media-queries";
+@import "base/colors";
+@import "base/fonts";
+
+// import layouts
+@import "layout/header";
+@import "layout/footer";
+
+// import pages
+@import "pages/home";
+@import "pages/accommodation";
+@import "pages/contact";
+@import "pages/property";
+@import "pages/saved-properties";
+@import "pages/confirmation";
+@import "pages/content";
+@import "pages/landing-pages";
+
+// import element styles
+@import "elements/datepicker";
+@import "elements/property-filter";
+@import "elements/modal";
+@import "elements/google-maps";
+@import "elements/blog-feed";
+@import "elements/booking-popup";
+@import "elements/important-notice";
+@import "elements/testimonials";
+@import "elements/lockdown-guarantee";
+
+// global styles
+body {
+  font-family: "Open Sans";
+  color: $primary;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+::-moz-selection {
+  background: $secondary;
+  color: #fff;
+}
+
+::selection {
+  background: $secondary;
+  color: #fff;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:active {
+  outline: 0;
+  box-shadow: 0 !important;
+}
+
+.btn.btn-white {
+  background-color: transparent;
+  color: $white;
+  font-weight: $f-semi-bold;
+  font-size: 1.125rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  border: 1px solid $white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $white;
+    color: $primary;
+  }
+}
+
+.btn.btn-secondary {
+  background-color: $secondary;
+  color: $primary;
+  font-weight: $f-semi-bold;
+  font-size: 1.125rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  border: 2px solid $secondary;
+  padding: 10px 20px;
+
+  &:hover {
+    color: $secondary;
+    background-color: transparent;
+  }
+
+  &.bordered {
+    border: 2px solid $primary;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.btn.btn-primary {
+  background-color: $primary;
+  color: $white;
+  font-weight: $f-semi-bold;
+  font-size: 1.125rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  border: 2px solid $primary;
+
+  &:hover {
+    color: $primary;
+    background-color: transparent;
+  }
+}
+
+.btn.btn-outline {
+  background-color: $light;
+  color: $primary;
+  font-weight: $f-semi-bold;
+  font-size: 1.125rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  border: 2px solid $primary;
+  padding: 0.375rem 2rem;
+
+  &:hover {
+    color: #fff;
+    background-color: $primary;
+  }
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.google-captcha * {
+  transform: scale(0.98) translateX(-3px);
+  @include min-width(xs) {
+    transform: none;
+  }
+}
+
+.key-video {
+  position: relative;
+  padding-top: 56.25%;
+
+  & > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.hero__booking {
+  img {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 955px;
+
+    @media (min-width: 992px) {
+      margin-top: -40px;
+    }
+  }
+}
+.locations__span--full span {
+  height: 100% !important;
+}
+.min__full {
+  min-height: calc(100vh - 2px);
+  display: block;
+  background-color: #f3f3f3;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.no-height iframe {
+  height: initial !important;
+}
+.village-design {
+  font-size: 14px;
+  background: #fff;
+  padding: 16px 16px;
+  box-shadow: 0px 0 8px -6px #000;
+  p,
+  li {
+    font-size: inherit;
+    color: #6c6c6c;
+  }
+}
+.image-caption-center {
+  position: relative;
+  h5 {
+    font-size: 25px;
+    font-weight: 600;
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+
+    transform: translate(0px, 68%);
+    padding: 20px;
+    background: rgb(13 10 44 / 61%);
+    color: #fffff2;
+    border-top-right-radius: 5px;
+    line-height: 32px;
+    max-width: 465px;
+    text-shadow: 0 0 2px #000000;
+    border-bottom-right-radius: 5px;
+    @media (max-width: 700px) {
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+}
+
+.message_show h6 {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.message_show {
+  background: #fff;
+  padding: 7px;
+  margin-bottom: 10px;
+  color: #eb5b21;
+  font-weight: 600;
+}
+
+.accordion {
+  margin-bottom: 1rem;
+  .heading {
+    font-weight: $f-semi-bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    margin-right: 10px;
+    @include min-width(xs) {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.booking-popup {
+	display: none;
+	@include min-width(md) {
+		display: block;
+	}
+
+	&.active {
+		transform: translateX(0);
+	}
+
+	&__toggle {
+		background: $primary;
+		color: #fff;
+		padding: 1rem;
+		display: inline-block;
+		position: fixed;
+		left: 0;
+		top: 50%;
+		transform: translate(-105%, -50%);
+		transition: all 300ms ease-in-out;
+		cursor: pointer;
+		z-index: 1;
+
+		&.active {
+			transform: translate(0, -50%);
+		}
+
+		h5 {
+			margin: 0;
+		}
+	}
+
+	&__content {
+		background: $primary;
+		position: fixed;
+		color: #fff;
+		text-align: center;
+		left: 0;
+		top: 50%;
+		padding: 2rem;
+		width: 100%;
+		max-width: 500px;
+		transform: translate(-105%, -50%);
+		box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
+		transition: all 300ms ease-in-out;
+		z-index: 2;
+
+		&.active {
+			transform: translate(0, -50%);
+		}
+
+		i {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			font-size: 1.25rem;
+			cursor: pointer;
+			transition: all 200ms ease-in-out;
+
+			&:hover {
+				color: $secondary;
+			}
+		}
+
+		p {
+			a {
+				color: $secondary;
+				text-decoration: none;
+				transition: all 200ms ease-in-out;
+
+				&:hover {
+					color: darken($secondary, 10%);
+				}
+			}
+		}
+	}
+}
