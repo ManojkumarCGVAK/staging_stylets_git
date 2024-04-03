@@ -15,6 +15,8 @@ class Header extends Component {
     surrey: false,
     about: false,
     savedCount: 0,
+    isSurreySub: false,
+    isCheltenhamSub: false,
   };
 
   componentDidUpdate(prevProps) {
@@ -46,6 +48,8 @@ class Header extends Component {
         cheltenham: false,
         active: false,
         surrey: false,
+        isSurreySub: false,
+        isCheltenhamSub: false,
       });
     }
   };
@@ -55,7 +59,58 @@ class Header extends Component {
       cheltenham: false,
       active: false,
       surrey: false,
+      isSurreySub: false,
+      isCheltenhamSub: false,
     });
+  };
+
+  handleDisplaySub = (e) => {
+    e.stopPropagation();
+    if (e.target.id === "surrey") {
+      this.setState({ isSurreySub: !this.state.isSurreySub })
+    } else if (e.target.id === "cheltenham") {
+      this.setState({ isCheltenhamSub: !this.state.isCheltenhamSub })
+    }
+  };
+
+  renderDropdown = (displayContent, type, active = false) => {
+    return (
+      <div
+        className="dropdown-menu"
+        aria-labelledby="navbarDropdown"
+        style={{ display: displayContent ? "block" : "none" }}
+      >
+        <Link href={`/${type}/long-term-lets`}>
+          <a className="dropdown-item" onClick={this.toggleMenu}>
+            Long Term Lets
+          </a>
+        </Link>
+        {active && <div className="dropdown-divider" />}
+        <Link href={`/${type}/short-term-lets`}>
+          <a onClick={this.toggleMenu} className="dropdown-item">
+            Short Term Lets
+          </a>
+        </Link>
+        {active && <div className="dropdown-divider" />}
+        <Link href={`/${type}/relocation-breaks`}>
+          <a onClick={this.toggleMenu} className="dropdown-item">
+            Relocation Breaks
+          </a>
+        </Link>
+        {active && <div className="dropdown-divider" />}
+        <Link href={`/${type}/corporate-business-lets`}>
+          <a onClick={this.toggleMenu} className="dropdown-item">
+            Corporate and Business Lets
+          </a>
+        </Link>
+        {active && <div className="dropdown-divider" />}
+        <Link href={`/${type}/holiday-lets`}>
+          <a onClick={this.toggleMenu} className="dropdown-item">
+            Holiday Lets
+          </a>
+        </Link>
+      </div>
+    )
   };
 
   render() {
@@ -96,43 +151,7 @@ class Header extends Component {
                   Cheltenham
                 </a>
               </Link>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="navbarDropdown"
-                style={{ display: this.state.cheltenham ? "block" : "none" }}
-              >
-                <Link href="/cheltenham-accommodation/long-term-lets">
-                  <a className="dropdown-item" onClick={this.toggleMenu}>
-                    Long Term Lets
-                  </a>
-                </Link>
-                <div className="dropdown-divider" />
-                <Link href="/cheltenham-accommodation/short-term-lets">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Short Term Lets
-                  </a>
-                </Link>
-                <div className="dropdown-divider" />
-                <Link href="/cheltenham-accommodation/relocation-breaks">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Relocation Breaks
-                  </a>
-                </Link>
-
-                <div className="dropdown-divider" />
-                <Link href="/cheltenham-accommodation/corporate-business-lets">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Corporate and Business Lets
-                  </a>
-                </Link>
-
-                <div className="dropdown-divider" />
-                <Link href="/cheltenham-accommodation/holiday-lets">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Holiday Lets
-                  </a>
-                </Link>
-              </div>
+              {this.renderDropdown(this.state.cheltenham, "cheltenham-accommodation", true)}
             </li>
           </ClickAwayListener>
         ) : (
@@ -153,20 +172,52 @@ class Header extends Component {
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link href="/surrey-accommodation">
-                <a onClick={this.toggleMenu} className="nav-link">
-                  Surrey Accommodation
-                </a>
-              </Link>
+            <li className="nav-item dropdown ">
+              <div className="d-flex">
+                <li className="nav-item">
+                  <Link href="/surrey-accommodation">
+                    <a onClick={this.toggleMenu} className="nav-link">
+                      Surrey Accommodation
+                    </a>
+                  </Link>
+                </li>
+                <span
+                  className="nav-link dropdown-toggle ml-3"
+                  href="#"
+                  id="surrey"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  onClick={this.handleDisplaySub}
+                >
+                </span>
+              </div>
+              {this.renderDropdown(this.state.isSurreySub, "surrey-accommodation")}
             </li>
 
-            <li className="nav-item">
-              <Link href="/cheltenham-accommodation">
-                <a onClick={this.toggleMenu} className="nav-link">
-                  Cheltenham Accommodation
-                </a>
-              </Link>
+            <li className="nav-item dropdown ">
+              <div className="d-flex">
+                <li className="nav-item">
+                  <Link href="/cheltenham-accommodation">
+                    <a onClick={this.toggleMenu} className="nav-link">
+                      Cheltenham Accommodation
+                    </a>
+                  </Link>
+                </li>
+                <span
+                  className="nav-link dropdown-toggle ml-3"
+                  href="#"
+                  id="cheltenham"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  onClick={this.handleDisplaySub}
+                >
+                </span>
+              </div>
+              {this.renderDropdown(this.state.isCheltenhamSub, "cheltenham-accommodation")}
             </li>
           </>
         )}
@@ -188,78 +239,11 @@ class Header extends Component {
                   Surrey
                 </a>
               </Link>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="navbarDropdown"
-                style={{ display: this.state.surrey ? "block" : "none" }}
-              >
-                <Link href="/surrey-accommodation/long-term-lets">
-                  <a className="dropdown-item" onClick={this.toggleMenu}>
-                    Long Term Lets
-                  </a>
-                </Link>
-                <div className="dropdown-divider" />
-                <Link href="/surrey-accommodation/short-term-lets">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Short Term Lets
-                  </a>
-                </Link>
-                <div className="dropdown-divider" />
-                <Link href="/surrey-accommodation/relocation-breaks">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Relocation Breaks
-                  </a>
-                </Link>
-
-                <div className="dropdown-divider" />
-                <Link href="/surrey-accommodation/corporate-business-lets">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Corporate and Business Lets
-                  </a>
-                </Link>
-
-                <div className="dropdown-divider" />
-                <Link href="/surrey-accommodation/holiday-lets">
-                  <a onClick={this.toggleMenu} className="dropdown-item">
-                    Holiday Lets
-                  </a>
-                </Link>
-              </div>
+              {this.renderDropdown(this.state.surrey, "surrey-accommodation", true)}
             </li>
           </ClickAwayListener>
         ) : (
           <>
-            <li className="nav-item">
-              <Link href="/accommodation">
-                <a onClick={this.toggleMenu} className="nav-link">
-                  Accommodation
-                </a>
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link href="/corporate">
-                <a onClick={this.toggleMenu} className="nav-link">
-                  Corporate
-                </a>
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link href="/surrey-accommodation">
-                <a onClick={this.toggleMenu} className="nav-link">
-                  Surrey Accommodation
-                </a>
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link href="/cheltenham-accommodation">
-                <a onClick={this.toggleMenu} className="nav-link">
-                  Cheltenham Accommodation
-                </a>
-              </Link>
-            </li>
           </>
         )}
 
