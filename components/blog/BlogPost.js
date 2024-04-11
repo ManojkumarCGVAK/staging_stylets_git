@@ -12,7 +12,7 @@ class BlogPost extends Component {
 					<div className='post-box'>
 						<div className='thumbnail-wrapper'>
 							<div className='thumbnail' style={{position:"relative"}}>
-								<Image src={source_url} lazy="true" layout='fill'/>
+								<Image src={source_url} alt={source_url ? `${source_url}_img` : `test_img`} lazy="true" layout='fill'/>
 							</div>
 						</div>
 

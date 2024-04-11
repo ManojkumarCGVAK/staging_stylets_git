@@ -201,7 +201,7 @@ class Filter extends Component {
 								</div>
 
 								<div className='col-md field' aria-labelledby="toDateLabel">
-									<label htmlFor="toDateInput">To</label>
+									<label id="toDateLabel" htmlFor="toDateField">To</label>
 									<div className='date-picker'>
 										{/* <InputRange
 											minValue={this.state.minPrice}
@@ -213,22 +213,16 @@ class Filter extends Component {
 												this.setState({ price })
 											}
 										/> */}
-										<MuiPickersUtilsProvider
-											utils={MomentUtils}
-										>
+										<MuiPickersUtilsProvider utils={MomentUtils}>
 											<DatePicker
 												id='toDateField'
 												variant='inline'
 												format='DD/MM/YYYY'
-												minDate={addDays(
-													moment(
-														this.state.fromDate
-													).toDate(),
-													1
-												)}
+												minDate={addDays(moment(this.state.fromDate).toDate(), 1)}
 												minDateMessage='Date needs to end after the "from" date'
 												value={this.state.toDate}
 												onChange={this.toDateChange}
+												aria-labelledby="toDateLabel"
 											/>
 										</MuiPickersUtilsProvider>
 									</div>

@@ -54,7 +54,7 @@ const Testimonials = () => {
 				>
 					{testimonials.map((item,index) => (
 						<div key={index.toString()}>
-							<h5>&quot;{item.content}&quot;</h5>
+							<h4>&quot;{item.content}&quot;</h4>
 							<small>- {item.name}</small>
 						</div>
 					))}
