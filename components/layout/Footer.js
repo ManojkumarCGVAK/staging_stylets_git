@@ -74,14 +74,20 @@ export default class Footer extends Component {
 					<div className='contact-section'>
 						<div className='inner-content'>
 							<div className='icons'>
-								<a href='https://twitter.com/staylets1' target='_blank'
-								 rel='noreferrer'
+								<a
+									href='https://twitter.com/staylets1'
+									target='_blank'
+								 	rel='noreferrer'
+									aria-label="Visit our Twitter profile"
 								 >
 									<i className='fab fa-twitter' />
 								</a>
 
-								<a href='https://www.facebook.com/StayLets/' target='_blank' 
-								rel='noreferrer'
+								<a
+									href='https://www.facebook.com/StayLets/'
+									target='_blank' 
+									rel='noreferrer'
+									aria-label="Visit our Facebook profile"
 								>
 									<i className='fab fa-facebook' />
 								</a>
@@ -90,6 +96,7 @@ export default class Footer extends Component {
 									href='https://www.linkedin.com/company/52199067/'
 									target='_blank'
 									rel='noreferrer'
+									aria-label="Visit our Linkedin profile"
 								>
 									<i className='fab fa-linkedin' />
 								</a>

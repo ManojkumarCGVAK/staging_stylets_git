@@ -184,7 +184,7 @@ class Header extends Component {
                 <span
                   className="nav-link dropdown-toggle ml-3"
                   href="#"
-                  id="surrey"
+                  id="surrey_active"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -208,7 +208,7 @@ class Header extends Component {
                 <span
                   className="nav-link dropdown-toggle ml-3"
                   href="#"
-                  id="cheltenham"
+                  id="cheltenham_active"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"

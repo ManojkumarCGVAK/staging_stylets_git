@@ -18,7 +18,7 @@ export default class Property extends Component {
 
 		const featuredImage =
 			filteredImages.length > 0 ? (
-				<img src={filteredImages[0].url} alt={filteredImages[0].name} />
+				<img src={filteredImages[0].url} alt={filteredImages[0].name ? filteredImages[0].name : "test_image"} />
 			) : (
 				<img src={FeaturedImage} alt='Placeholder' />
 			);

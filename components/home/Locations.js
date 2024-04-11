@@ -52,7 +52,7 @@ const Listarea = ({area, parcom}) =>{
 			<a className='locations__card locations__span--full '>
 			<Image
 				src={area.location === 'Cheltenham' ? Cheltenham : Surrey}
-				alt={`${area.location}`}
+				alt={`${area.location}_img`}
 				lazy="true"
 				// fill="true"
 				// layout='fill'

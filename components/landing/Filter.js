@@ -126,9 +126,9 @@ class Filter extends Component {
 							<h1 className='heading'>
 								Find your home away from home
 							</h1>
-							<h3 className='subheading'>
+							<h2 className='subheading'>
 								Search for accommodation to rent nearby
-							</h3>
+							</h2>
 						</div>
 
 						<div className='filter-bar'>
@@ -169,8 +169,8 @@ class Filter extends Component {
 									</select>
 								</div>
 
-								<div className='col-md field'>
-									<label>From</label>
+								<div className='col-md field' aria-labelledby="fromDateLabel">
+									<label htmlFor="fromDateInput">From</label>
 									<div className='date-picker'>
 										{/* <InputRange
 											minValue={this.state.minPrice}
@@ -186,6 +186,7 @@ class Filter extends Component {
 											utils={MomentUtils}
 										>
 											<DatePicker
+												id="fromDateInput"
 												variant='inline'
 												format='DD/MM/YYYY'
 												minDate={new Date()}
@@ -196,8 +197,8 @@ class Filter extends Component {
 									</div>
 								</div>
 
-								<div className='col-md field'>
-									<label>To</label>
+								<div className='col-md field' aria-labelledby="toDateLabel">
+									<label htmlFor="toDateInput">To</label>
 									<div className='date-picker'>
 										{/* <InputRange
 											minValue={this.state.minPrice}
