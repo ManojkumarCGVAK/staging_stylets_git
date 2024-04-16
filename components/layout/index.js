@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
+import Loadable from '../elements/Loadable';
+
 // import components
-import Header from './Header';
-import Footer from './Footer';
+const Header = Loadable(lazy(() => import('./Header')));
+const Footer = Loadable(lazy(() => import('./Footer')));
 
 export default class index extends Component {
   render() {

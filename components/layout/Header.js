@@ -141,7 +141,7 @@ class Header extends Component {
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
-                  id="cheltenham-acc"
+                  id="cheltenham"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -184,7 +184,7 @@ class Header extends Component {
                 <span
                   className="nav-link dropdown-toggle ml-3"
                   href="#"
-                  id="surrey_active"
+                  id="surrey"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -208,7 +208,7 @@ class Header extends Component {
                 <span
                   className="nav-link dropdown-toggle ml-3"
                   href="#"
-                  id="cheltenham_active"
+                  id="cheltenham"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -229,7 +229,7 @@ class Header extends Component {
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
-                  id="surrey_acc"
+                  id="surrey"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -253,7 +253,7 @@ class Header extends Component {
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
-                id="aboutus_sec"
+                id="aboutus"
                 role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"

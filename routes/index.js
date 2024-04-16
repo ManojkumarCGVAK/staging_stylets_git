@@ -1,27 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Loadable from '../components/elements/Loadable';
+
 // Components
-import Home from '../components/home';
-import BuildingList from '../components/accommodation/BuildingList';
-import PropertyTypeList from '../components/accommodation/PropertyTypeList';
-import Accommodation from '../components/accommodation';
-import Contact from '../components/contact';
-import Property from '../components/property';
-import Saved from '../components/saved';
-import Cheltenham from '../components/locations/cheltenham';
-import Surrey from '../components/locations/surrey';
-import About from '../components/content/About';
-import PrivacyPolicy from '../components/content/PrivacyPolicy';
-import CookiePolicy from '../components/content/CookiePolicy';
-import TermsAndConditions from '../components/content/TermsAndConditions';
-import Corporate from '../components/landing/Corporate';
-import SurreyLanding from '../components/landing/Surrey';
-import CorporateOffer from '../components/landing/CorporateOffer';
-import CorporateOfferCheltenham from '../components/landing/CheltenhamAccommodation';
-import CorporateSurrey from '../components/landing/CorporateSurrey';
-import SurreyAccommodation from '../components/landing/SurreyAccommodation';
-import BookingLandingSuccess from '../components/landing/BookingLandingSuccess';
+const Home = Loadable(lazy(() => import('../components/home')));
+const BuildingList = Loadable(lazy(() => import('../components/accommodation/BuildingList')));
+const PropertyTypeList = Loadable(lazy(() => import('../components/accommodation/PropertyTypeList')));
+const Accommodation = Loadable(lazy(() => import('../components/accommodation')));
+const Contact = Loadable(lazy(() => import('../components/contact')));
+const Property = Loadable(lazy(() => import('../components/property')));
+const Saved = Loadable(lazy(() => import('../components/saved')));
+const Cheltenham = Loadable(lazy(() => import('../components/locations/cheltenham')));
+const Surrey = Loadable(lazy(() => import('../components/locations/surrey')));
+const About = Loadable(lazy(() => import('../components/content/About')));
+const PrivacyPolicy = Loadable(lazy(() => import('../components/content/PrivacyPolicy')));
+const CookiePolicy = Loadable(lazy(() => import('../components/content/CookiePolicy')));
+const TermsAndConditions = Loadable(lazy(() => import('../components/content/TermsAndConditions')));
+const Corporate = Loadable(lazy(() => import('../components/landing/Corporate')));
+const SurreyLanding = Loadable(lazy(() => import('../components/landing/Surrey')));
+const CorporateOffer = Loadable(lazy(() => import('../components/landing/CorporateOffer')));
+const CorporateOfferCheltenham = Loadable(lazy(() => import('../components/landing/CheltenhamAccommodation')));
+const CorporateSurrey = Loadable(lazy(() => import('../components/landing/CorporateSurrey')));
+const SurreyAccommodation = Loadable(lazy(() => import('../components/landing/SurreyAccommodation')));
+const BookingLandingSuccess = Loadable(lazy(() => import('../components/landing/BookingLandingSuccess')));
 
 export default (
 	<Router>
