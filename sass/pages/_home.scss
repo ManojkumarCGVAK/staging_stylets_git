@@ -20,8 +20,6 @@
 	background-repeat: no-repeat;
 
 	.inner-page {
-		// background-color: $light;
-		// background-image: url('../../images/diamonds.svg');
 		padding: 10% 0 50px;
 		margin-top: -6.5%;
 
@@ -31,11 +29,6 @@
 		}
 
 		&__intro {
-			// display: flex;
-			// flex-direction: column;
-			// align-items: center;
-			// justify-content: center;
-			// flex-wrap: wrap;
 			padding-top: 2rem;
 			text-align: center;
 
@@ -168,32 +161,6 @@
 		@include min-width(lg) {
 			grid-template-columns: repeat(2, 1fr);
 		}
-
-		// display: -ms-grid;
-		// display: grid;
-		// -ms-grid-columns: 1fr;
-		// grid-template-columns: 1fr;
-		// -ms-grid-rows: 360px;
-		// grid-template-rows: 360px;
-		// grid-gap: 2rem;
-		// grid-template-areas: 'child1 child2';
-		// -ms-grid-rows: 1fr 1fr;
-		// -ms-grid-columns: 1fr 1fr;
-		// grid-template:
-		// 	'a   b' 50%
-		// 	'c   d' 50% / 50% 50%;
-		// @include min-width(lg) {
-		// 	// -ms-grid-columns: 1fr 1fr;
-		// 	// grid-template-columns: 1fr 1fr;
-		// }
-
-		// & > *:nth-child(1) {
-		// 	grid-area: 'a';
-		// }
-
-		// & > *:nth-child(2) {
-		// 	grid-area: 'b';
-		// }
 
 		&__card {
 			position: relative;

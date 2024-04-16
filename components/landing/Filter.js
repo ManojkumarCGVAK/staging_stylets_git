@@ -33,10 +33,6 @@ class Filter extends Component {
 		});
 	}
 
-	componentDidMount() {
-		// console.log(this.testRef);
-	}
-
 	generateSearchString() {
 		const { location, guests, promoCode, fromDate, toDate } = this.state;
 

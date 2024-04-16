@@ -81,8 +81,6 @@ export default async function handler(req, res) {
             reserveForMinutes: 0,
             promoCode,
         }
-            
-        // };
         
         const token = Base64.encode(`${keys.integrationKey}:${keys.integrationPassword}`);
     

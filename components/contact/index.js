@@ -4,7 +4,6 @@ import HeroImage from '../../images/hero-image.png';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import Image from 'next/future/image'
-// import MapFooter from './MapFooter';
 
 export default class index extends Component {
 	render() {

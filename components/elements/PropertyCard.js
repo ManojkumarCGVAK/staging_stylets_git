@@ -66,10 +66,7 @@ class PropertyCard extends Component {
 				</React.Fragment>
 			);
 
-		const query = this.props.router.query; 
-		// qs.parse(this.props.location.search, {
-		// 	ignoreQueryPrefix: true,
-		// });
+		const query = this.props.router.query;
 
 		const { dateFrom, dateTo, promoCode } = query;
 
@@ -106,16 +103,6 @@ class PropertyCard extends Component {
 				dateTo,
 			});
 		}
-
-		// const propertyName =
-		// 	property.propertyTypeName &&
-		// 	property.propertyTypeName.toLowerCase().includes('superior')
-		// 		? `Superior ${property.name}`
-		// 		: property.name;
-
-		// const propertyName = property.propertyTypeName
-		// 	? `${property.name} - ${property.propertyTypeName}`
-		// 	: property.name;
 
 		return (
 			<div className='property-card'>

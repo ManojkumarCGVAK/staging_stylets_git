@@ -6,7 +6,6 @@ const Gallery = props => {
 		<ImageGallery
 			items={props.images}
 			showFullscreenButton={false}
-			// showPlayButton={false}
 			autoPlay={true}
 		/>
 	);

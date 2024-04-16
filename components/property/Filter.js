@@ -3,7 +3,6 @@ import { withRouter } from 'next/router';
 import MomentUtils from '@date-io/moment';
 import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
 import moment from 'moment';
-import qs from 'qs';
 
 // Utils
 import isEmpty from '../../validation/is-empty';
@@ -23,9 +22,6 @@ class Filter extends Component {
 
 	componentDidMount() {
 		const query = this.props.router.query;
-		//  qs.parse(this.props.location.search, {
-		// 	ignoreQueryPrefix: true,
-		// });
 		if (!isEmpty(query)) {
 			this.setState({
 				promoCode: query.promoCode,

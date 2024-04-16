@@ -12,24 +12,6 @@ class SaveProperty extends Component {
 		saved: false,
 	};
 
-	//   componentWillReceiveProps(nextProps) {
-	//     if (!isEmpty(nextProps.properties.property)) {
-	//       // turn local storage into array
-	//       const storedProperties = JSON.parse(
-	//         localStorage.getItem('savedProperties')
-	//       );
-
-	//       if (
-	//         !isEmpty(storedProperties) &&
-	//         storedProperties.includes(nextProps.properties.property.id)
-	//       ) {
-	//         this.setState({ saved: true });
-	//       } else {
-	//         this.setState({ saved: false });
-	//       }
-	//     }
-	//   }
-
 	componentDidMount() {
 		const storedProperties = JSON.parse(
 			localStorage.getItem('savedProperties')

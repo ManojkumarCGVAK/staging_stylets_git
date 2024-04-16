@@ -360,7 +360,7 @@ class Header extends Component {
                     alt="Stay Lets Logo"
                     width="100"
                     height="64"
-                    // layout="responsive"
+                    layout="responsive"
                     priority
                   />
                 </a>
@@ -374,12 +374,11 @@ class Header extends Component {
                 }
                 type="button"
                 onClick={() => this.setState({ active: !active })}
+                aria-label="Menu Toggle"
               >
-                <>
-                  <span className="hamburger-box">
-                    <span className="hamburger-inner" />
-                  </span>
-                </>
+                <span className="hamburger-box">
+                  <span className="hamburger-inner" />
+                </span>
               </button>
 
               <div

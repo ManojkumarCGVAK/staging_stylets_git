@@ -14,13 +14,11 @@ import Spinner from '../elements/Spinner';
 import Filter from './Filter';
 import slugify from '../../util/slugify';
 import checkForImage from '../../util/checkForImage';
-// import LockdownGuarantee from '../elements/LockdownGuarantee';
 
 import FeaturedImage from '../../images/featured-image.jpg';
 
 import AwardCheltenham from '../../images/award-cheltenham.jpg';
 import AwardEgham from '../../images/award-egham.jpg';
-// import RightSidebar from '../property/RightSidebar'; a
 
 class BuildingList extends Component {
 	state = {

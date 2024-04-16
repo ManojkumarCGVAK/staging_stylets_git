@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 // import components
 import FeaturedImage from '../../images/featured-image.jpg';
-// import slugify from '../../util/slugify';
 
 export default class Property extends Component {
 	render() {

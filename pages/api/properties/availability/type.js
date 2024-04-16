@@ -26,11 +26,9 @@ export default async function handler(req, res) {
         .then(response => {
             const result = response.data.results.find( property => property.propertyTypeName === propertyTypeName && property.areaName.toLowerCase() === location
             );
-                // console.log(response);
             return res.json(result);
         })
         .catch(err =>{
-            // console.log(e);
             return res.status(400).json(err)
         });
 

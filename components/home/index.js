@@ -4,23 +4,17 @@ import Link from "next/link";
 
 // import components
 import HeroImage from "../../images/hero-image.png";
-// import HeroImage from "../../images/cheltenham/card-bg-min.jpg";
 import Filter from "./Filter";
 import Locations from "./Locations";
-// import { getProperties } from "../../actions/propertiesActions";
 import Spinner from "../elements/Spinner";
 import BlogPosts from "../blog/BlogPosts";
 import BookingPopup from "../elements/BookingPopup";
 import Gallery from "./Gallery";
-import VirusNotice from "../elements/VirusNotice";
 import Testimonials from "../elements/Testimonials";
 import Imagefu from "next/future/image";
-import Image from "next/image";
-// import LockdownGuarantee from '../elements/LockdownGuarantee';
 
 class index extends Component {
   componentDidMount() {
-    // this.props.getProperties();
     window.localStorage.setItem(
       "cheltenham",
       JSON.stringify(this.props.Cheltenham.slice(0, 4))
@@ -43,12 +37,14 @@ class index extends Component {
               <Link href="/accommodation">
                 <a>
                   {/* <Image src={HeroImage} alt="Bedroom" width="1110" lazy="true" priority={100} title="StayLets Village and Caboose Town @ The Festival, Cheltenham March 2023"/> */}
-                  <Image
+                  <Imagefu
+                    id="bedroom_img"
                     src={HeroImage}
                     alt="Bedroom"
                     width="1110"
                     lazy="true"
                     priority={100}
+                    placeholder="bedroom_img"
                   />
                 </a>
               </Link>
@@ -172,11 +168,5 @@ const mapStateToProps = (state) => {
     loading: state.properties.loading,
   };
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     getProperties: (config) => dispatch(getProperties(config)),
-//   };
-// };
 
 export default connect(mapStateToProps, null)(index);

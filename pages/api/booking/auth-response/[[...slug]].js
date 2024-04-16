@@ -216,7 +216,6 @@ export default async function handler(req, res) {
                                             }
                                         })
                                         .catch(err => {
-                                            // console.log(err);
                                             return res.send(TemplateRender(err.response.data,data.originUrl))
                                         });
                                 } else {
@@ -227,9 +226,6 @@ export default async function handler(req, res) {
                                 return res.send(TemplateRender(err.response.data,data.originUrl))
                             });
                     }
-                    // return res.status(400).json({
-                    // 	paymentError: response.data.statusDetail,
-                    // });
                     return res.send(TemplateRender(response.data.statusDetail,data.originUrl))
                 })
                 .catch(err => {
@@ -238,9 +234,6 @@ export default async function handler(req, res) {
                 });
         })
         .catch(err => {
-            console.log("==========================");
-            // console.log(err);
-            console.log("===========================");
             return res.send(TemplateRender(err.response.data,data.originUrl))
         });
     }

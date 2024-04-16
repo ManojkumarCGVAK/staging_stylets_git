@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Link  from 'next/link';
-import { connect } from 'react-redux';
-import Image from 'next/image'
-// import { Link as SmoothLink } from 'react-scroll';
 
 // import components
 import Filter from './Filter';
-import Locations from './Locations';
-import { getProperties } from '../../actions/propertiesActions';
-import Spinner from '../elements/Spinner';
 import SellingPoints from '../elements/SellingPoints';
 import Gallery from '../property/Gallery';
 import NewContactForm from '../contact/NewContactForm'
@@ -48,12 +42,6 @@ const imageArray = images.map(image => {
 
 
 const Corporate = () => {
-	// componentDidMount() {
-	// 	this.props.getProperties();
-	// }
-
-	// render() {
-		// const properties = this.props.loading ? <Spinner /> : <Locations />;
 
 		return (
 			<div className='landing-page'>
@@ -138,26 +126,10 @@ const Corporate = () => {
 						</div>
 					</div>
 
-					{/* {properties} */}
-
 					<NewContactForm />
 				</section>
 			</div>
 		);
-	// }
 }
 
-// const mapStateToProps = state => {
-// 	return {
-// 		loading: state.properties.loading,
-// 	};
-// };
-
-// const mapDispatchToProps = dispatch => {
-// 	return {
-// 		getProperties: config => dispatch(getProperties(config)),
-// 	};
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Corporate);
 export default Corporate;

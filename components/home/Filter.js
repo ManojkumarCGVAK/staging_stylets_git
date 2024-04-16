@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'next/router';
-// import InputRange from 'react-input-range';
 import MomentUtils from '@date-io/moment';
 import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
 import moment from 'moment';
@@ -31,10 +30,6 @@ class Filter extends Component {
 		this.setState({
 			[e.target.name]: e.target.value,
 		});
-	}
-
-	componentDidMount() {
-		// console.log(this.testRef);
 	}
 
 	generateSearchString() {
@@ -113,7 +108,6 @@ class Filter extends Component {
 			this.props.router.push({
 				pathname: '/accommodation',
 				query: this.generateSearchString()
-				// query: this.generateSearchString(),
 			});
 		}
 	};

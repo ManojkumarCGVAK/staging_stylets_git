@@ -95,7 +95,6 @@ class RightSidebar extends Component {
 					className='btn btn-secondary mb-0'
 					data-toggle='modal'
 					onClick={this.opendialog}
-					// data-target='#bookingModal'
 				>
 					Book Now
 				</button>

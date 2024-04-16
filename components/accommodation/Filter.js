@@ -19,9 +19,6 @@ class Filter extends Component {
 	};
 
 	componentDidMount() {
-		// const query = qs.parse(this.props.router.query, {
-		// 	ignoreQueryPrefix: true,
-		// });
 		const query = this.props.router.query;
 		if (!isEmpty(query)) {
 			this.setState({ fromDate: query.dateFrom, toDate: query.dateTo });

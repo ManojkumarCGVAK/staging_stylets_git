@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Head from 'next/head'
-import qs from 'qs';
 import Link from 'next/link';
 import {withRouter} from 'next/router'
 import { 
@@ -37,46 +36,6 @@ class index extends Component {
 
 	componentDidMount() {
 		this.props.getProperties();
-		// const propertyIdentifier = this.props.match.params.propertyId;
-		// this.props.getSingleProperty(propertyIdentifier);
-
-		// if (this.props.singlePropertyType.properties.length) {
-		// 	const { id } = this.props.singlePropertyType.properties[0];
-		// 	propertyIdentifier = id;
-		// 	this.props.getSingleProperty(propertyIdentifier);
-
-		// 	const query = qs.parse(this.props.location.search, {
-		// 		ignoreQueryPrefix: true,
-		// 	});
-
-		// 	if (!isEmpty(query)) {
-		// 		const { dateFrom, dateTo } = query;
-
-		// 		if (dateFrom && dateTo) {
-		// 			const query = {
-		// 				dateFrom,
-		// 				dateTo,
-		// 				propertyIdentifier,
-		// 				grouping: 'UNIT',
-		// 			};
-		// 			return this.props.getSingleAvailability(query);
-		// 		}
-		// 	}
-		// }
-
-		// if (this.props.location.state) {
-		// 	const { dateFrom, dateTo } = this.props.location.state;
-
-		// 	if (dateFrom && dateTo) {
-		// 		const query = {
-		// 			dateFrom,
-		// 			dateTo,
-		// 			propertyIdentifier,
-		// 			grouping: 'UNIT',
-		// 		};
-		// 		this.props.getSingleAvailability(query);
-		// 	}
-		// }
 	}
 
 	componentDidUpdate(prevProps) {
@@ -99,10 +58,7 @@ class index extends Component {
 			propertyIdentifier = id
 			this.props.getSingleProperty(propertyIdentifier);
 
-			const query = this.props.router.query; 
-			// qs.parse(this.props.location.search, {
-			// 	ignoreQueryPrefix: true,
-			// });
+			const query = this.props.router.query;
 
 			if (!isEmpty(query)) {
 				const { dateFrom, dateTo, promoCode } = query;
@@ -123,14 +79,8 @@ class index extends Component {
 			}
 		}
 
-		// const propertyIdentifier = this.props.match.params.propertyId;
-
 		if (prevProps.router.query !== this.props.router.query) {
-			const query = this.props.router.query; 
-			// qs.parse(this.props.location.search, {
-			// 	ignoreQueryPrefix: true,
-			// });
-			// console.log(this.props.singlePropertyType);
+			const query = this.props.router.query;
 			const { propertyType, propertyTypeName } =  Array.isArray(this.props.singlePropertyType?.properties) && this.props.singlePropertyType?.properties.at(0);
 
 			if (!isEmpty(query)) {
@@ -238,26 +188,6 @@ class index extends Component {
 									<Gallery property={this.props.singleProperty} images={imageArray} />
 
 									<Filter property={this.props.singleProperty} />
-
-									{/* <div className='cta-request'>
-										<div className='call'>
-											<p>
-												Call us on{' '}
-												<a href='tel: 01452886186'>
-													01452&nbsp;886186
-												</a>
-											</p>
-										</div>
-
-										<button
-											type='button'
-											className='btn btn-secondary'
-											data-toggle='modal'
-											data-target='#enquiryModal'
-										>
-											Request Details
-										</button>
-									</div> */}
 
 									<RightSidebar
 										property={this.props.singleProperty}

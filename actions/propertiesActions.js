@@ -11,8 +11,6 @@ export const getProperties = () => dispatch => {
 	axios
 		.get('/api/properties')
 		.then(response => {
-			
-			// console.log(response);
 			dispatch({
 				type: actionTypes.GET_PROPERTIES,
 				payload: response.data,
@@ -158,7 +156,6 @@ export const getSingleAvailability = query => dispatch => {
 			dispatch({
 				type: actionTypes.GET_SINGLE_AVAILABILITY,
 				payload: response.data ? response.data : 'unavailable',
-				// payload: response.data === '' ? 'unavailable' : response.data,
 			});
 			dispatch({
 				type: actionTypes.SET_LOADING,
@@ -213,7 +210,6 @@ export const deleteSavedProperty = propertyId => dispatch => {
 
 	localStorage.setItem('savedProperties', JSON.stringify(storedProperties));
 
-	// dispatch(getSavedProperties());
 	dispatch(getSavedPropertiesCount());
 };
 
@@ -234,7 +230,6 @@ export const getSavedProperties = () => dispatch => {
 		payload: true,
 	});
 
-	// turn stored properties in to array of properties
 	const storedProperties = JSON.parse(
 		localStorage.getItem('savedProperties')
 	);

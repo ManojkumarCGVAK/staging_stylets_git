@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import  Link  from 'next/link'
 import Logo from '../../images/logo.gif';
 import MarkeyGroup from '../../images/m-group.png';
-import Compliance from '../../images/compliance.png';
 import public_hearts from '../../images/public_hearts.jpg';
-// import Asap from '../../images/asap.png';
 import Asap from '../../images/ASAP_new.jpg';
 import Swla from '../../images/swla.jpg';
 import Imagefu from 'next/future/image';
@@ -34,25 +32,7 @@ export default class Footer extends Component {
 					</div>
 
 					<div className='accreditations'>
-						{/* <a
-							href='https://www.staywithconfidence.com/isaap-accreditation/'
-							target='_blank'
-							rel='nofollow noopener'
-						>
-							<img
-								src={Quality}
-								alt='Quality Accredited Provider'
-							/>
-						</a> */}
-						{/* <a
-							href='#'
-							// target='_blank'
-							rel='noreferrer'
-						>
-							<Imagefu src={public_hearts} alt='isaap Compliance Assured Provider' width='130' height='67' />
-						</a> */}
 						<a
-							// href='https://theasap.org.uk/memberships/quality-accreditation-programme/'
 							href='https://staywithconfidence.com/'
 							target='_blank'
 							rel='noreferrer'

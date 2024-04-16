@@ -1,7 +1,6 @@
 
 const transporter = require('../../config/nodemailer') 
-const validateFormEnquiry = require('../../validation/form-enquiry') 
-// const authenticate = require('../../../serverutil/authenticate');
+const validateFormEnquiry = require('../../validation/form-enquiry')
 const keys = require('../../config/keys');
 const axios = require('axios');
 
@@ -48,7 +47,6 @@ export default async function handler(req, res) {
 		})
 		.then(email => res.json({ success: 'Email sent successfully' }))
 		.catch(err => {
-			// console.log(err);
 			res.status(400).json({
 				email: 'Something went wrong with your enquiry',
 			});

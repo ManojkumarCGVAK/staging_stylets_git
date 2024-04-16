@@ -18,14 +18,6 @@ import axios from 'axios';
 import FeaturedImage from "../../images/featured-image.jpg";
 
 class PropertyTypeList extends Component {
-  componentDidMount() {
-    // this.props.getProperties();
-    // const path = window.location.pathname.split('/');
-    // const [building,location] = path.reverse();
-    // this.setState({building,location});
-    // this.loadpost(building,location);
-
-  }
 
   loadpost = (building,location) =>{
     this.setState({loading:true})
@@ -40,16 +32,6 @@ class PropertyTypeList extends Component {
 		})
 		.catch(err => console.log(err.response));
   }
-
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.all == null || prevProps.all !== this.props.all) {
-  //     const { location, building } = this.props.router.query;
-  //     if (location && building && this.props.all.length > 0) {
-  //       this.props.getPropertyTypes({ location, building });
-  //     }
-  //   }
-  // }
 
   render() {
     const { location } = this.props.router.query;
@@ -100,11 +82,6 @@ const mapDispatchToProps = (dispatch) => {
     getPropertyTypes: (query) => dispatch(getPropertyTypes(query)),
   };
 };
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(withRouter(PropertyTypeList));
 
 
 const Cheltenhamcom = ({ location }) => {

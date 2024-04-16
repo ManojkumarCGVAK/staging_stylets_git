@@ -51,13 +51,12 @@ const Listarea = ({area, parcom}) =>{
 		<Link href={`/accommodation/${slugify(area.location)}`}>
 			<a className='locations__card locations__span--full '>
 			<Image
+				id={`${area.location}_img`}
 				src={area.location === 'Cheltenham' ? Cheltenham : Surrey}
 				alt={`${area.location}_img`}
 				lazy="true"
-				// fill="true"
-				// layout='fill'
+				layout="responsive"
 				priority={80}
-			
 				/>
 			<div className='locations__card--overlay'>
 				<h2>

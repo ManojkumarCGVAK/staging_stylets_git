@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {withRouter} from "next/router"
 import ReCAPTCHA from 'react-google-recaptcha';
-// import ReCAPTCHA from 'react-google-recaptcha';
 import axios from 'axios';
 import Cards from 'react-credit-cards';
 import isEmpty from '../../validation/is-empty';
@@ -60,40 +59,6 @@ class BookingModal extends Component {
         this.setState({ [e.target.name]: e.target.value });
     };
 
-    // iframeContentHandler = () => {
-    // 	const iframe = document.getElementById('sage-iframe');
-    // 	let innerDoc;
-    // 	if (iframe.contentDocument) {
-    // 		innerDoc = iframe.contentDocument;
-    // 		const content = innerDoc.querySelector('pre');
-    // 		iframe.style.display = 'none';
-    // 		// console.log(JSON.parse(content.innerHTML));
-    // 		const data = {
-    // 			sageResponse: JSON.parse(content.innerHTML),
-    // 			transactionId: this.state.transactionId,
-    // 			bookingIdentifier: this.state.bookingIdentifier,
-    // 			vendorTxCode: this.state.vendorTxCode,
-    // 		};
-    // 		axios
-    // 			.post('/api/booking/transaction-submission', data)
-    // 			.then(response => {
-    // 				console.log(response.data); // If successful with 3D auth needed
-    // 				if (response.data.success) {
-    // 					return this.setState({
-    // 						success: true,
-    // 					});
-    // 				}
-    // 			})
-    // 			.catch(err => {
-    // 				this.setState({
-    // 					errors: err.response.data,
-    // 					loading: false,
-    // 					success: false,
-    // 					authentication: false,
-    // 				});
-    // 			});
-    // 	}
-    // };
     onCaptchaChange = value => {
 		this.setState({ captchaValue: value, errors: { captcha: '' } });
 
@@ -111,20 +76,7 @@ class BookingModal extends Component {
 			});
 		}
 
-
         this.setState({ loading: true, errors: {} });
-
-        // const token = Base64.encode(
-        // 	`${keys.integrationKey}:${keys.integrationPassword}`
-        // );
-        // const postData = {
-        // 	vendorName: keys.vendorName,
-        // };
-        // const config = {
-        // 	headers: {
-        // 		Authorization: `Basic ${token}`,
-        // 	},
-        // };
 
         const bookingPrice =
             this.props.availability.rateAvailability.promoTotals.gross ||
@@ -166,12 +118,6 @@ class BookingModal extends Component {
             .then(response => {
                 const { merchantSessionKey } = response.data;
                 if (merchantSessionKey) {
-                    // const cardData = {
-                    // 	name: this.state.name,
-                    // 	number: this.state.number,
-                    // 	expiry: this.state.expiry,
-                    // 	cvc: this.state.cvc,
-                    // };
 
                     window
                         .sagepayOwnForm({
@@ -192,7 +138,6 @@ class BookingModal extends Component {
                                     axios
                                         .post('/api/booking/payment', data)
                                         .then(response => {
-                                            // console.log(response.data); // If succesful without 3D auth needed
                                             if (response.data.success) {
                                                 this.props.router.replace('/booking-success')
                                                 return this.setState({
@@ -275,32 +220,6 @@ class BookingModal extends Component {
                     success: false,
                 });
             });
-
-        // axios
-        // 	.post('/api/booking', data)
-        // 	.then(success => {
-        // 		this.setState({
-        // 			loading: false,
-        // 			success: true,
-        // 			firstName: '',
-        // 			lastName: '',
-        // 			addressLine1: '',
-        // 			addressLine2: '',
-        // 			city: '',
-        // 			postalCode: '',
-        // 			phone: '',
-        // 			email: '',
-        // 			source: '',
-        // 			errors: {},
-        // 		});
-        // 	})
-        // 	.catch(err => {
-        // 		this.setState({
-        // 			errors: err.response.data,
-        // 			loading: false,
-        // 			success: false,
-        // 		});
-        // 	});
     };
     close = () =>{
         this.props.close('booking')
@@ -500,7 +419,6 @@ class BookingModal extends Component {
                                             onChange={this.changeHandler}
                                             type='number'
                                             data-card-details='number'
-                                            // maxLength='16'
                                         />
                                         {errors.number ? <p className='error'>{errors.number}</p> : null}
                                     </div>
@@ -514,7 +432,6 @@ class BookingModal extends Component {
                                             type='number'
                                             data-card-details='expiry'
                                             placeholder='MMYY'
-                                            // maxLength='4'
                                         />
                                         {errors.expiry ? <p className='error'>{errors.expiry}</p> : null}
                                     </div>
@@ -528,7 +445,6 @@ class BookingModal extends Component {
                                             type='number'
                                             data-card-details='cvc'
                                             placeholder='123'
-                                            // maxLength='3'
                                         />
                                         {errors.cvc ? <p className='error'>{errors.cvc}</p> : null}
                                     </div>
@@ -542,17 +458,6 @@ class BookingModal extends Component {
                                         </small>
                                     </div>
                                 </div>
-
-                                {/* {this.state.authentication &&
-									isEmpty(this.state.errors) && (
-										<iframe
-											id='sage-iframe'
-											src='about:blank'
-											frameBorder='0'
-											name='sagePayFrame'
-											// onLoad={this.iframeContentHandler}
-										></iframe>
-									)} */}
 
                                 {this.state.errors.paymentError && (
                                     <p className='ml-3 mt-3 error'>{`*${errors.paymentError} Please try again.`}</p>
@@ -576,12 +481,6 @@ class BookingModal extends Component {
                 </div>
             );
         }
-
-        // if (success) {
-        //     // document.querySelector('.modal-backdrop').classList.remove('modal-backdrop', 'fade', 'show');
-        //     // document.querySelector('body').classList.remove('modal-open');
-        //     // document.querySelector('body').style.paddingRight = '0px';
-        // }
 
         const selfSubmittingForm = this.state.authentication && (
             <React.Fragment>
@@ -653,10 +552,7 @@ class BookingModal extends Component {
                 </div>
                 {selfSubmittingForm}
             </React.Fragment>
-        ) :null 
-        // <>
-        //     {success && this.props.router.replace('/booking-success')}
-        //     </>
+        ) :null
     }
 }
 
