@@ -127,8 +127,6 @@ class PropertyCard extends Component {
 
 						<div className='col-md-4'>
 							<div className='property-info'>
-								{/* <h3 className='address'>{property.location}</h3> */}
-
 								<ul className='meta-info'>
 									<li>
 										<i className='fas fa-user fa-fw' /> {`Sleeps 1 - ${property.maxOccupancy}`}

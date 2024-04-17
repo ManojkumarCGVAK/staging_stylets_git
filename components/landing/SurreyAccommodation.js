@@ -97,9 +97,6 @@ class SurreyAccommodation extends Component {
           <Link href="/accommodation/egham/magna-house">
             <a className="btn btn-secondary">Book Now</a>
           </Link>
-          {/* <SmoothLink to='landing-contact' smooth={true} offset={-70} className='btn btn-secondary'>
-						Book Now
-					</SmoothLink> */}
         </section>
 
         <section className="inner-page">

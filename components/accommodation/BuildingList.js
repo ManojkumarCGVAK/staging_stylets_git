@@ -147,7 +147,6 @@ class BuildingList extends Component {
 											</div>
 										)}
 										<div className='description'>
-											{/* <p>{building.description}</p> */}
 											<ul>
 												{description.map((item, index) => {
 													if (!item) {
@@ -255,7 +254,6 @@ class BuildingList extends Component {
 					</div>
 				</div>
 				<div className='property-feed'>
-					{/* <LockdownGuarantee /> */}
 					<div className='container'>
 						<div className='row'>
 							<div className='col-lg-9'>

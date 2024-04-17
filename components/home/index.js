@@ -33,10 +33,8 @@ class index extends Component {
         <div className="homepage">
           <section className="hero">
             <div className="container">
-              {/* <Link href="/accommodation/staylets-villageand-caboose-town"> */}
               <Link href="/accommodation">
                 <a>
-                  {/* <Image src={HeroImage} alt="Bedroom" width="1110" lazy="true" priority={100} title="StayLets Village and Caboose Town @ The Festival, Cheltenham March 2023"/> */}
                   <Imagefu
                     id="bedroom_img"
                     src={HeroImage}
@@ -53,7 +51,6 @@ class index extends Component {
 
           <section className="inner-page">
             <BookingPopup />
-            {/* {<VirusNotice />} */}
             <Filter />
             <div className="container">
               <div className="inner-page__intro">
@@ -88,7 +85,6 @@ class index extends Component {
               </div>
             </div>
             <Gallery />
-            {/* <LockdownGuarantee className='mt-5' /> */}
             <div className="container text-center home-subheader">
               <h2>Serviced Apartments in Cheltenham and Surrey</h2>
             </div>
@@ -152,9 +148,6 @@ class index extends Component {
             <BlogPosts posts={this.props.posts} />
             <BlogPosts location="Cheltenham" posts={this.props.Cheltenham} />
             <BlogPosts location="Surrey" posts={this.props.Surrey} />
-            {/* <BlogPosts />
-          <BlogPosts location="Cheltenham" />
-          <BlogPosts location="Surrey" /> */}
             <Testimonials />
           </section>
         </div>

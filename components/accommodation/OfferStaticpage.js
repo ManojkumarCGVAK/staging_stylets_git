@@ -50,7 +50,6 @@ class OfferStaticpage extends Component {
 					<div className='container'>
 						<div className='row'>
 							<div className='col-lg-9'>
-								{/* <div>{properties}</div> */}
 								<div className='village-design'>
 									<div className='image-caption-center'>
 										<h5 style={{ marginTop: "10px" }}>Caboose Town @ The Festival, Cheltenham March 2024</h5>

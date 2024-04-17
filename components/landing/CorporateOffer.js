@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link as SmoothLink } from 'react-scroll';
 
 // import components
-import Filter from './Filter';
 import Locations from './Locations';
 import { getProperties } from '../../actions/propertiesActions';
 import Spinner from '../elements/Spinner';
@@ -61,7 +60,6 @@ class CorporateOffer extends Component {
 						backgroundImage: `linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) ), url(${MagnaHouse.src})`,
 					}}
 				>
-					{/* <Filter /> */}
 					<h2>Book Your Free Stay Today</h2>
 					<SmoothLink to='landing-contact' smooth={true} offset={-70} className='btn btn-secondary'>
 						Book Now
@@ -72,14 +70,6 @@ class CorporateOffer extends Component {
 					<div className='container'>
 						<div className='selling-points-section'>
 							<h3 className='heading'>Corporate Accommodation in Cheltenham & Surrey</h3>
-							{/* <SmoothLink
-								to='landing-contact'
-								smooth={true}
-								offset={-70}
-								className='btn btn-secondary mb-5'
-							>
-								Book Your Free Stay Today
-							</SmoothLink> */}
 							<SellingPoints items={items} />
 						</div>
 					</div>

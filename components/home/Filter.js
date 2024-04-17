@@ -169,16 +169,6 @@ class Filter extends Component {
 								<div className='col-md field' aria-labelledby="fromDateLabel">
 									<label htmlFor="fromDateInput">From</label>
 									<div className='date-picker'>
-										{/* <InputRange
-											minValue={this.state.minPrice}
-											maxValue={this.state.maxPrice}
-											step={1}
-											formatLabel={value => `£${value}`}
-											value={this.state.price}
-											onChange={price =>
-												this.setState({ price })
-											}
-										/> */}
 										<MuiPickersUtilsProvider
 											utils={MomentUtils}
 										>
@@ -197,16 +187,6 @@ class Filter extends Component {
 								<div className='col-md field' aria-labelledby="toDateLabel">
 									<label id="toDateLabel" htmlFor="toDateField">To</label>
 									<div className='date-picker'>
-										{/* <InputRange
-											minValue={this.state.minPrice}
-											maxValue={this.state.maxPrice}
-											step={1}
-											formatLabel={value => `£${value}`}
-											value={this.state.price}
-											onChange={price =>
-												this.setState({ price })
-											}
-										/> */}
 										<MuiPickersUtilsProvider utils={MomentUtils}>
 											<DatePicker
 												id='toDateField'

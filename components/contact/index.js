@@ -28,7 +28,6 @@ export default class index extends Component {
 					</div>
 				</div>
 
-				{/* <MapFooter /> */}
 			</div>
 		);
 	}

@@ -104,11 +104,7 @@ class index extends Component {
 				</section>
 
 				<section className='inner-page'>
-					{/* <BlogPosts location='Surrey' /> */}
 					<BlogPosts posts={this.props.posts} location={this.props.location} />
-					{/* <BlogPosts location='Cheltenham' tag='Events' /> */}
-					{/* <BlogPosts location='Cheltenham' tag='Locations' />
-					<BlogPosts location='Cheltenham' tag='Activities' /> */}
 				</section>
 			</div>
 		);

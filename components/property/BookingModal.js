@@ -392,7 +392,6 @@ class BookingModal extends Component {
                             <div className='row'>
                                 <div className='col-md-12'>
                                     <div className='field'>
-                                        {/* <label>Card details</label> */}
                                         <Cards
                                             locale={{ valid: 'VALID TO' }}
                                             cvc={this.state.cvc}
@@ -491,13 +490,6 @@ class BookingModal extends Component {
                 > 
                     <input type='hidden' name='creq' value={this.state.paReq} />
                     <input type="hidden" name="threeDSSessionData" value={this.state.transactionId} />
-                    {/* <input
-                        type='hidden'
-                        name='TermUrl'
-                        value={`https://www.staylets.co.uk/api/booking/auth-response/${this.state.transactionId}/${this.state.bookingIdentifier}/${this.state.vendorTxCode}/${this.props.availability.name}/${this.props.availability.location}?originUrl=${window.location.href}`}
-                        value={`http://localhost:3000/api/booking/auth-response/${this.state.transactionId}/${this.state.bookingIdentifier}/${this.state.vendorTxCode}/${this.props.availability.name}/${this.props.availability.location}?originUrl=${window.location.href}`}
-                    /> */}
-                    {/* <input type='hidden' name='MD' value={this.state.transactionId} /> */}
                 </form>
             </React.Fragment>
         );

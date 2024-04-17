@@ -68,9 +68,6 @@ class CorporateSurrey extends Component {
 						Book Now
 						</a>
 					</Link>
-					{/* <SmoothLink to='landing-contact' smooth={true} offset={-70} className='btn btn-secondary'>
-						Book Now
-					</SmoothLink> */}
 				</section>
 
 				<section className='inner-page'>
